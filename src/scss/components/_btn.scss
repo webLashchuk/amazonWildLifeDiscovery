@@ -1,0 +1,58 @@
+/* stylelint-disable declaration-no-important */
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+*[class].btn {
+  position: relative;
+  @include flex-all-center;
+  max-width: fit-content;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  border-radius: calc(var(--radius-main) - 12px);
+  font-weight: var(--fw-600);
+  font-size: 18px;
+  background-color: var(--color-white) !important;
+  font-family: var(--font-family-primary);
+  color: var(--color-white) !important;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 10px 30px;
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.2s;
+
+  &--user {
+    color: var(--color-green) !important;
+
+    &:hover {
+      background-color: var(--color-green) !important;
+      color: var(--color-white) !important;
+
+      @include media(tablet) {
+        color: var(--color-green) !important;
+        background-color: var(--color-white) !important;
+      }
+    }
+  }
+
+  &--order,
+  &--main {
+    background-color: var(--color-green) !important;
+
+    &:hover {
+      background-color: var(--color-white) !important;
+      color: var(--color-green) !important;
+
+      @include media(tablet) {
+        background-color: var(--color-green) !important;
+        color: var(--color-white) !important;
+      }
+    }
+  }
+
+  &--main {
+    padding: 16px 80px;
+    margin: 0 auto;
+  }
+}

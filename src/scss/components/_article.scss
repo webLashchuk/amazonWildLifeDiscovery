@@ -1,0 +1,28 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+.article {
+  @include flex-col;
+  gap: 15px;
+
+  img {
+    aspect-ratio: 7/4;
+
+    @include media(mobile-l) {
+      aspect-ratio: 16/10;
+    }
+  }
+
+  &__list {
+    padding-left: 22px;
+  }
+
+  &__item {
+    list-style-type: disc;
+    line-height: 1.35;
+  }
+
+  p {
+    line-height: 1.35;
+  }
+}

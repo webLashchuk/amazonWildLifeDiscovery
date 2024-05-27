@@ -1,0 +1,31 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.services {
+  .post {
+    gap: 25px;
+  }
+
+  .post__content {
+    max-width: 420px;
+  }
+
+  .post__image {
+    max-width: 645px;
+  }
+
+  h2 {
+    margin: 0 0 15px;
+
+    +p {
+      font-size: 20px;
+      text-align: left;
+      color: var(--color-gray-200);
+    }
+  }
+
+  img {
+    border-radius: 0;
+    aspect-ratio: 31/20;
+  }
+}

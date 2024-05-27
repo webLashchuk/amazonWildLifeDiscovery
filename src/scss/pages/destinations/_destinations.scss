@@ -1,0 +1,30 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins"as*;
+
+.destinations {
+  h2 {
+    margin-bottom: 15px;
+    line-height: 1.35;
+
+    +p {
+      margin-bottom: 50px;
+      font-size: 24px;
+    }
+  }
+
+  &__header {
+    p {
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0.02rem;
+    }
+  }
+
+  &__header {
+    margin-bottom: 50px;
+  }
+
+  h3 {
+    line-height: 1.39;
+  }
+}

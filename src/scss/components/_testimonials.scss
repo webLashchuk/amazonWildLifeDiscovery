@@ -1,0 +1,27 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+.testimonials {
+  h2 {
+    margin-bottom: 50px;
+    font-weight: var(--fw-900);
+    line-height: 1.35;
+  }
+
+  .article {
+    align-items: center;
+  }
+
+  .article__image {
+    max-width: 100px;
+  }
+
+  img {
+    aspect-ratio: 1/1;
+  }
+
+  p {
+    text-align: center;
+    line-height: 1.3;
+  }
+}

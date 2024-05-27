@@ -1,0 +1,64 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+h1,
+h2,
+h3 {
+  overflow: hidden;
+  width: fit-content;
+  text-transform: capitalize;
+}
+
+h2,
+h3 {
+  font-weight: var(--fw-600);
+  color: var(--color-white)
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 1.35;
+  font-weight: var(--fw-900);
+  color: var(--color-white);
+
+  @include media(mobile-l) {
+    font-size: 46px;
+  }
+
+  @include media(mobile-s) {
+    font-size: 34px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 0 auto;
+
+  +p {
+    font-size: 20px;
+    max-width: 865px;
+    width: 100%;
+    font-weight: var(--fw-600);
+    margin: 0 auto;
+    text-align: center;
+
+    @include media(mobile-l) {
+      font-size: 16px;
+    }
+  }
+
+  @include media(mobile-l) {
+    font-size: 28px;
+  }
+}
+
+h3 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--color-white);
+  font-weight: var(--fw-400);
+}

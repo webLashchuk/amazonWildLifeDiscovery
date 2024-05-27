@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk" class="page">
+<include src="./html/_head.html" locals='{"title": "About Us"}'></include>
+
+<body class="page__body">
+  <div class="site-container">
+
+    <include src="./html/_header.html" locals='{"page": "about", "class": ""}'></include>
+
+    <main class="main">
+
+      <include src="./html/_hero.html">
+        {
+        "class":"",
+        "image": "about/hero.jpg",
+        "titleTop":"",
+        "title":"Welcome to Amazon Wildlife Discovery",
+        "textClass":"hidden",
+        "text":""
+        }
+      </include>
+
+      <include src="./html/about/_story.html"></include>
+
+      <include src="./html/about/_team.html"></include>
+
+      <include src="./html/about/_values.html"></include>
+
+      <include src="./html/about/_info-about.html"></include>
+
+      <include src="./html/_contact.html"></include>
+
+    </main>
+
+    <include src="./html/_footer.html"></include>
+  </div>
+
+</body>
+
+</html>

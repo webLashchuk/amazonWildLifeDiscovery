@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk" class="page">
+<include src="./html/_head.html" locals='{"title": "Destinations"}'></include>
+
+<body class="page__body">
+  <div class="site-container">
+
+    <include src="./html/_header.html" locals='{"page": "destinations", "class": ""}'></include>
+
+    <main class="main">
+
+      <include src="./html/_hero.html">
+        {
+        "class":"",
+        "image": "destinations/hero.jpg",
+        "titleTop":"Explore the Wonders of the",
+        "title":"Amazon Rainforest",
+        "textClass":"hidden",
+        "text":""
+        }
+      </include>
+
+      <include src="./html/destinations/_destinations.html"></include>
+
+      <include src="./html/destinations/_profiles.html"></include>
+
+      <include src="./html/destinations/_activities.html"></include>
+
+      <include src="./html/destinations/_blog.html"></include>
+
+      <include src="./html/_contact.html"></include>
+
+    </main>
+
+    <include src="./html/_footer.html"></include>
+  </div>
+
+</body>
+
+</html>

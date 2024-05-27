@@ -1,0 +1,15 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+.features {
+  h2 {
+    margin-bottom: 15px;
+    font-weight: var(--fw-900);
+    line-height: 1.35;
+
+    +p {
+      max-width: 910px;
+      line-height: 1.55;
+    }
+  }
+}

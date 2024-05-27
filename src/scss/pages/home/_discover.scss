@@ -1,0 +1,129 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins"as*;
+
+.discover {
+  &__wrapper {
+    @include flex-v-center;
+    justify-content: flex-end;
+    gap: 25px;
+    max-width: 1440px;
+    width: 100%;
+    padding-left: 15px;
+
+    @include media(tablet) {
+      flex-wrap: wrap-reverse;
+      padding-inline: 15px;
+      justify-content: flex-start;
+    }
+  }
+
+  h2 {
+    margin: 0 0 15px;
+  }
+
+  p {
+    text-align: left;
+    color: var(--color-gray-200);
+    line-height: 1.34;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  &__content {
+    max-width: 535px;
+    width: 100%;
+
+    @include media(tablet) {
+      max-width: 100%;
+    }
+  }
+
+  &__images {
+    position: relative;
+    min-height: 498px;
+    max-width: 705px;
+    width: 100%;
+
+    @include media(tablet) {
+      margin: 0 auto;
+    }
+
+    @include media(mobile-l) {
+      max-width: 505px;
+      min-height: 400px;
+    }
+
+    @include media(mobile-s) {
+      min-height: 450px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    border-radius: var(--radius-main);
+    overflow: hidden;
+    width: 100%;
+
+    &:nth-child(1) {
+      max-width: 420px;
+      bottom: 58px;
+      left: 0;
+
+      @include media(mobile-l) {
+        max-width: 320px;
+      }
+
+      @include media(mobile-s) {
+        max-width: 100%;
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+
+      img {
+        aspect-ratio: 59/50;
+      }
+    }
+
+    &:nth-child(2) {
+      max-width: 330px;
+      left: 50%;
+      transform: translateX(-55%);
+      bottom: 0;
+
+      @include media(mobile-l) {
+        max-width: 230px;
+      }
+
+      @include media(mobile-s) {
+        transform: translateX(-30%);
+      }
+
+      img {
+        aspect-ratio: 33/25;
+      }
+    }
+
+    &:nth-child(3) {
+      max-width: 405px;
+      top: 0;
+      right: 0;
+
+      @include media(mobile-l) {
+        max-width: 305px;
+      }
+
+      @include media(mobile-s) {
+        max-width: 250px;
+        left: 0;
+      }
+
+      img {
+        aspect-ratio: 63/50;
+      }
+    }
+
+    &:not(:first-child) {
+      border: 10px solid var(--color-dark);
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.footer {
+  .nav {
+    align-items: flex-start;
+    padding-block: 40px;
+
+    @include media(tablet) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  h3 {
+    display: inline;
+    color: var(--color-white);
+
+    @include media(mobile-s) {
+      display: none;
+    }
+  }
+
+  .nav__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    font-size: 16px;
+    line-height: 1.05;
+
+    @include media(tablet) {
+      align-items: center;
+    }
+  }
+
+  .nav__list {
+    margin: 0 auto;
+
+    @include media(tablet) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0 10px;
+    }
+
+    @include media(mobile-l) {
+      max-width: 400px
+    }
+  }
+
+  &__inner,
+  &__list {
+    @include flex-all-sb;
+  }
+
+  &__inner {
+    padding-block: 10px 30px;
+
+    @include media(tablet) {
+      padding-block: 10px 24px;
+    }
+
+    @include media(mobile-l) {
+      flex-direction: column-reverse;
+      gap: 15px;
+    }
+
+    p,
+    a {
+      font-weight: var(--fw-400);
+      font-size: 16px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+
+  .copyright {
+    @include media(mobile-s) {
+      max-width: 240px;
+      width: 100%;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}

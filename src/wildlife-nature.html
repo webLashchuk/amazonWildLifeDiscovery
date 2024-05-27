@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk" class="page">
+<include src="./html/_head.html" locals='{"title": "Wildlife & Nature"}'></include>
+
+<body class="page__body">
+  <div class="site-container">
+
+    <include src="./html/_header.html" locals='{"page": "wildlife-nature", "class": ""}'></include>
+
+    <main class="main">
+
+      <include src="./html/_hero.html">
+        {
+        "class":"",
+        "image": "wildlife-nature/hero.jpg",
+        "titleTop":"",
+        "title":"Wildlife & Nature",
+        "textClass":"",
+        "text":"Explore the astonishing biodiversity of the Amazon rainforest, teeming with
+        a diverse array of wildlife, plants, and ecosystems."
+        }
+      </include>
+
+      <include src="./html/wildlife-nature/_info.html"></include>
+
+      <include src="./html/wildlife-nature/_cases.html"></include>
+
+      <include src="./html/_contact.html"></include>
+
+    </main>
+
+    <include src="./html/_footer.html"></include>
+  </div>
+
+</body>
+
+</html>

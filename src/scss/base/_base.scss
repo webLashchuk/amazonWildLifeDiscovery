@@ -1,0 +1,164 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+html,
+body {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+.page {
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-400);
+  font-style: normal;
+  font-size: 14px;
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums;
+
+  &__body {
+    min-width: 320px;
+    min-height: var(--vh);
+  }
+
+  &.open {
+    overflow: hidden;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+  width: 100%;
+
+  &--wide {
+    max-width: calc(var(--container-width) + 220px);
+  }
+}
+
+.site-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr auto;
+  min-height: var(--vh);
+}
+
+.logo {
+  max-width: 240px;
+  width: 100%;
+  transition: opacity .2s;
+  margin-right: 25px;
+  transition: filter .2s;
+
+  @include media(tablet) {
+    max-width: 250px;
+    margin-right: 0;
+  }
+
+  @include media(mobile-m) {
+    max-width: 180px;
+  }
+
+  &:hover {
+    filter: var(--green);
+
+    @include media(tablet) {
+      filter: var(--white);
+    }
+  }
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.section {
+  padding-block: 64px;
+
+  @include media(tablet) {
+    padding-block: rem(50);
+  }
+
+  &--light {
+    background-color: var(--color-yellow);
+
+    h2 {
+      margin-bottom: 15px;
+
+      +p {
+        margin-bottom: 45px;
+        color: var(--color-gray);
+      }
+    }
+
+    h2,
+    h3 {
+      color: var(--color-blue);
+    }
+
+    p {
+      color: var(--color-gray);
+    }
+
+    li {
+      color: var(--color-gray);
+    }
+  }
+}
+
+.main--top {
+  padding-top: 170px;
+  background-color: var(--color-yellow);
+
+  @include media(tablet) {
+    padding-top: 120px;
+  }
+}
+
+.overlay-hero {
+  position: relative;
+
+  &::before,
+  &::after {
+    @include pseudo;
+    inset: 0;
+    z-index: 0;
+  }
+
+  &::before {
+    background: var(--gradient-hero);
+    z-index: 1;
+  }
+
+  &::after {
+    box-shadow: 4500px 4500px inset rgba(0, 0, 0, .10);
+    z-index: 0;
+    background: var(--gradient-radial);
+  }
+}
+
+.overlay {
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    z-index: 0;
+    inset: 0;
+    background: var(--gradient);
+  }
+}
+
+.link {
+  transition: color .2s;
+
+  &:hover {
+    color: var(--color-green);
+
+    @include media(tablet) {
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins"as*;
+
+.about {
+  .post__content {
+    max-width: 410px;
+
+    @include media(mobile-l) {
+      max-width: 100%;
+    }
+  }
+
+  .post__image {
+    max-width: 645px;
+
+    @include media(mobile-l) {
+      max-width: 100%;
+    }
+  }
+
+  h2 {
+    margin: 0 0 15px;
+    line-height: 1.35;
+
+    +p {
+      font-size: 20px;
+      text-align: left;
+      color: var(--color-gray-200);
+      line-height: 1.35;
+    }
+  }
+
+  img {
+    border-radius: var(--radius-main);
+    aspect-ratio: 54/25;
+  }
+}

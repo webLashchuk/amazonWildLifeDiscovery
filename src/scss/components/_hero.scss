@@ -1,0 +1,80 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.hero {
+  position: relative;
+  @include cover-background;
+
+  &::before,
+  &::after {
+    @include pseudo;
+    inset: 0;
+    z-index: 0;
+  }
+
+  &::before {
+    background: var(--gradient-hero);
+    z-index: 1;
+  }
+
+  &::after {
+    box-shadow: 4500px 4500px inset rgba(0, 0, 0, .10);
+    z-index: 0;
+    background: var(--gradient-radial);
+  }
+
+  &__wrapper {
+    position: relative;
+    @include flex-all-center;
+    flex-direction: column;
+    gap: 50px;
+    min-height: 100vh;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+  }
+
+  h1 {
+    max-width: 1270px;
+    width: 100%;
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 1.25;
+    font-family: var(--font-family-secondary);
+    max-width: 910px;
+
+    @include media(mobile-l) {
+      line-height: 1;
+      font-size: 20px;
+    }
+  }
+
+  span {
+    display: block;
+  }
+
+  &--secondary {
+    h1 {
+      max-width: 1115px;
+    }
+
+    span {
+      display: block;
+    }
+
+    &::before {
+      background: var(--gradient-tips);
+    }
+
+    &::after {
+      box-shadow: none;
+      background: var(--gradient-radial-tips);
+    }
+
+    .hero__wrapper {
+      min-height: 620px;
+    }
+  }
+}

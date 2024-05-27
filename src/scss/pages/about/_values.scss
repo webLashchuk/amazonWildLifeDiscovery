@@ -1,0 +1,13 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins"as*;
+
+.values {
+  h2 {
+    line-height: 1.5;
+    margin-bottom: 65px;
+  }
+
+  &.section {
+    padding-block: 45px 40px;
+  }
+}

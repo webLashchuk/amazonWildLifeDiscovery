@@ -1,0 +1,42 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.cases {
+  background-color: var(--color-yellow);
+
+  h2 {
+    color: var(--color-blue);
+  }
+
+  p {
+    color: var(--color-gray);
+  }
+
+  .post {
+    @include media(mobile-l) {
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  .post--reverse {
+    @include media(mobile-l) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .post__image {
+    max-width: 535px;
+
+    @include media(mobile-l) {
+      max-width: 100%;
+    }
+  }
+
+  img {
+    aspect-ratio: 169/100;
+
+    @include media(mobile-l) {
+      aspect-ratio: 16/7;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.post {
+  @include flex-v-center;
+  justify-content: flex-start;
+  gap: 25px;
+
+  @include media(mobile-l) {
+    flex-wrap: wrap-reverse;
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  p {
+    text-align: left;
+    font-weight: var(--fw-400);
+    font-size: 14px;
+  }
+
+  &__image,
+  &__content {
+    width: 100%;
+  }
+
+  &--reverse {
+    .post__image {
+      order: 1;
+    }
+
+    .post__content {
+      order: 2;
+    }
+  }
+}

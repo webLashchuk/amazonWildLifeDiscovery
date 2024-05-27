@@ -1,0 +1,14 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.listings {
+  h2 {
+    margin-bottom: 15px;
+
+    +p {
+      margin-bottom: 45px;
+      font-size: 14px;
+      font-weight: var(--fw-400);
+    }
+  }
+}
